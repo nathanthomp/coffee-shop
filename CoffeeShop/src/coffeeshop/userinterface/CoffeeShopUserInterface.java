@@ -1,3 +1,5 @@
+package coffeeshop.userinterface;
+
 import java.util.Scanner;
 
 public class CoffeeShopUserInterface {
@@ -104,9 +106,11 @@ public class CoffeeShopUserInterface {
     private void handleOption(CoffeeShopUserInterfaceOption option) {
         switch (option) {
             case MENU:
+                System.out.println("List of menu items:");
                 this.currentPage = CoffeeShopUserInterfacePage.MENU;
                 break;
             case ORDER:
+                System.out.println("What would you like to order?");
                 this.currentPage = CoffeeShopUserInterfacePage.ORDER;
                 break;
             case BACK:
@@ -116,37 +120,4 @@ public class CoffeeShopUserInterface {
                 break;
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    private void changePage(CoffeeShopUserInterfacePage newPage) {
-        this.currentPage = newPage;
-    }
-
-
-
-
-
-
-
-
-    // private String readOption() {
-    //     Scanner scanner = new Scanner(System.in);
-    //     String line = scanner.nextLine();
-    //     while (!line.equals("q")) {
-    //         System.out.println("Entered: " + line);
-    //         line = scanner.nextLine();
-    //     }
-    //     scanner.close();
-    // }
 }
