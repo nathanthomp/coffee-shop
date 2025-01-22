@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prices>
+    <price for="beverage-nic-small">3.99</price>
+    <price for="beverage-nic-medium">4.99</price>
+    <price for="beverage-nic-large">5.99</price>
+    <price for="beverage-nic-box">19.99</price>
+    <price for="beverage-nate-small">2.49</price>
+    <price for="beverage-nate-medium">3.49</price>
+    <price for="beverage-nate-large">4.49</price>
+    <price for="beverage-nate-box">16.49</price>
+    <price for="milk-regular">0.00</price>
+    <price for="milk-oat">0.40</price>
+    <price for="milk-almond">0.40</price>
+    <price for="milk-soy">0.50</price>
+    <price for="decorator-mocha">0.50</price>
+    <price for="decorator-syrup">0.25</price>
+    <price for="decorator-brownsugar">0.15</price>
+</prices>
