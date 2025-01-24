@@ -1,26 +1,18 @@
 public class SyrupBeverageDecorator extends BeverageDecorator {
-    private Beverage beverage;
-    private double price;
-    private SyrupType type;
+    private SyrupType flavor;
 
-    public SyrupBeverageDecorator(SyrupType type, Beverage beverage) {
-        this.type = type;
-        this.beverage = beverage;
-        this.price = PriceGateway.getInstance().getPrice("decorator-syrup");
-    }
-
-    @Override
-    public MilkType getMilk() {
-        return this.beverage.getMilk();
+    public SyrupBeverageDecorator(SyrupType flavor, Beverage beverage) {
+        super(beverage);
+        this.flavor = flavor;
     }
 
     @Override
     public double getPrice() {
-        return this.beverage.getPrice() + this.price;
+        return super.beverage.getPrice() + PriceGateway.getInstance().getPrice("decorator-syrup");
     }
 
     @Override
-    public SizeType getSize() {
-        return this.beverage.getSize();
+    public String getDescription() {
+        return super.beverage.getDescription() + ", syrup:" + this.flavor;
     }
 }

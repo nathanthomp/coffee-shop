@@ -81,4 +81,29 @@ public class BeverageTest {
         Beverage b = new NicBeverage(MilkType.OAT, SizeType.SMALL);
         assertTrue(b.getMilk() == MilkType.OAT);
     }
+
+    @Test
+    public void testNateBeverage_Description() {
+        Beverage b = new NateBeverage(MilkType.REGULAR, SizeType.SMALL);
+        assertTrue(b.getDescription().equals("Nate - SMALL, REGULAR"));
+    }
+
+    @Test
+    public void testNicBeverage_Description() {
+        Beverage b = new NicBeverage(MilkType.OAT, SizeType.SMALL);
+        assertTrue(b.getDescription().equals("Nic - SMALL, OAT"));
+    }
+
+    @Test
+    public void testNateBeverage_Size() {
+        Beverage b = new NateBeverage(MilkType.REGULAR, SizeType.SMALL);
+        assertTrue(b.getSize() == SizeType.SMALL);
+    }
+
+    @Test
+    public void testNicBeverage_Size() {
+        Beverage b = new NicBeverage(MilkType.OAT, SizeType.SMALL);
+        assertTrue(b.getSize() == SizeType.SMALL);
+    }
+
 }

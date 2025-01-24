@@ -1,24 +1,16 @@
 public class BrownSugarBeverageDecorator extends BeverageDecorator {
-    private Beverage beverage;
-    private double price;
 
     public BrownSugarBeverageDecorator(Beverage beverage) {
-        this.beverage = beverage;
-        this.price = PriceGateway.getInstance().getPrice("decorator-brownsugar");
-    }
-
-    @Override
-    public MilkType getMilk() {
-        return this.beverage.getMilk();
+        super(beverage);
     }
 
     @Override
     public double getPrice() {
-        return this.beverage.getPrice() + this.price;
+        return super.beverage.getPrice() + PriceGateway.getInstance().getPrice("decorator-brownsugar");
     }
 
     @Override
-    public SizeType getSize() {
-        return this.beverage.getSize();
+    public String getDescription() {
+       return super.beverage.getDescription() + ", brown sugar";
     }
 }

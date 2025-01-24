@@ -1,12 +1,10 @@
 public class NicBeverage implements Beverage {
     private MilkType milk;
     private SizeType size;
-    private double price;
 
     public NicBeverage(MilkType milk, SizeType size) {
         this.milk = milk;
         this.size = size;
-        this.price = BeveragePriceCalculator.calculate(this, milk, size);
     }
 
     @Override
@@ -15,12 +13,17 @@ public class NicBeverage implements Beverage {
     }
 
     @Override
-    public double getPrice() {
-        return this.price;
+    public SizeType getSize() {
+        return this.size;
     }
 
     @Override
-    public SizeType getSize() {
-        return this.size;
+    public double getPrice() {
+        return BeveragePriceCalculator.calculate(this, milk, size);
+    }
+
+    @Override
+    public String getDescription() {
+        return "Nic - " + this.size + ", " + this.milk;
     }
 }

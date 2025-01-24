@@ -1,24 +1,16 @@
 public class MochaBeverageDecorator extends BeverageDecorator {
-    private Beverage beverage;
-    private double price;
 
     public MochaBeverageDecorator(Beverage beverage) {
-        this.beverage = beverage;
-        this.price = PriceGateway.getInstance().getPrice("decorator-mocha");
-    }
-
-    @Override
-    public MilkType getMilk() {
-        return this.beverage.getMilk();
+        super(beverage);
     }
 
     @Override
     public double getPrice() {
-        return this.beverage.getPrice() + this.price;
+        return super.beverage.getPrice() + PriceGateway.getInstance().getPrice("decorator-mocha");
     }
 
     @Override
-    public SizeType getSize() {
-        return this.beverage.getSize();
+    public String getDescription() {
+        return super.beverage.getDescription() + ", mocha";
     }
 }

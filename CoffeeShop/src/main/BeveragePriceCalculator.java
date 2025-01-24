@@ -10,6 +10,11 @@ public class BeveragePriceCalculator {
             totalPrice += getNicBeveragePrice(size);
         }
 
+        /*
+         * TODO: this is no good. Move away from this approach - tight coupling 
+         * to concrete beverage types
+         */
+
         return totalPrice;
     }
 

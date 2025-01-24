@@ -33,4 +33,34 @@ public class BeverageDecoratorTest {
         Beverage b = new BrownSugarBeverageDecorator(new NateBeverage(MilkType.REGULAR, SizeType.SMALL));
         assertTrue(b.getPrice() == 2.49 + 0.15);
     }
+
+    @Test
+    public void testBrownSugarBeverageDecorator_Description() {
+        Beverage b = new BrownSugarBeverageDecorator(new NateBeverage(MilkType.REGULAR, SizeType.SMALL));
+        assertTrue(b.getDescription().equals("Nate - SMALL, REGULAR, brown sugar"));
+    }
+
+    @Test
+    public void testSyrupBeverageDecorator_Description() {
+        Beverage b = new SyrupBeverageDecorator(SyrupType.VANILLA, new NateBeverage(MilkType.REGULAR, SizeType.SMALL));
+        assertTrue(b.getDescription().equals("Nate - SMALL, REGULAR, syrup:VANILLA"));
+    }
+
+    @Test
+    public void testMochaBeverageDecorator_Description() {
+        Beverage b = new MochaBeverageDecorator(new NateBeverage(MilkType.REGULAR, SizeType.SMALL));
+        assertTrue(b.getDescription().equals("Nate - SMALL, REGULAR, mocha"));
+    }
+
+    @Test
+    public void testBeverageDecorator_Milk() {
+        Beverage b = new MochaBeverageDecorator(new NateBeverage(MilkType.REGULAR, SizeType.SMALL));
+        assertTrue(b.getMilk() == MilkType.REGULAR);
+    }
+
+    @Test
+    public void testBeverageDecorator_Size() {
+        Beverage b = new MochaBeverageDecorator(new NateBeverage(MilkType.REGULAR, SizeType.SMALL));
+        assertTrue(b.getSize() == SizeType.SMALL);
+    }
 }
