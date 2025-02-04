@@ -1,12 +1,19 @@
 import java.util.LinkedList;
 import java.util.List;
 
-public class CoffeeShop {
+import javax.swing.JFrame;
+
+public class CoffeeShop extends JFrame {
 
     private List<Order> orders;
 
     public CoffeeShop() {
         this.orders = new LinkedList<>();
+
+        this.setTitle("Nic & Nate's Coffee Shop");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setResizable(false);
+        this.setSize(500, 250);
     }
 
     public void viewMenu() {
