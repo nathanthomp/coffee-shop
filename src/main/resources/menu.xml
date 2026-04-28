@@ -1,0 +1,24 @@
+<menu>
+    <items>
+        <beverage>
+            <name>Espresso</name>
+            <price>2.50</price>
+            <description>A strong, concentrated coffee made by forcing hot water through finely-ground coffee beans.</description>
+        </beverage>
+        <beverage>
+            <name>Latte</name>
+            <price>3.50</price>
+            <description>A creamy coffee drink made with espresso and steamed milk, often topped with foam.</description>
+        </beverage>
+        <food>
+            <name>Croissant</name>
+            <price>2.00</price>
+            <description>A flaky, buttery pastry that is a popular breakfast item.</description>
+        </food>
+        <food>
+            <name>Bagel</name>
+            <price>1.50</price>
+            <description>A dense, chewy bread roll with a hole in the middle, often served toasted with cream cheese.</description>
+        </food>
+    </items>
+</menu>

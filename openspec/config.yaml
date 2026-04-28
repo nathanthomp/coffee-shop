@@ -1,0 +1,53 @@
+schema: spec-driven
+context: |
+    Project: Coffee Shop Ordering System (Desktop)
+    Primary Use Case: Cashier-facing kiosk / POS operated by coffee shop workers
+    Language: Java 21
+    UI Framework: JavaFX
+    Build Tool: Maven
+    Testing: JUnit 5
+    Architecture: MVC, Object-Oriented, Clean Separation of Concerns
+
+    Domain Context:
+    - Simple coffee shop with menu items (beverage/food).
+    - The application is used by workers to take customer orders at the counter.
+    - Workers input customer selections into the system, then create/finalize the order.
+    - Order management is separated from order creation in the UI.
+    - Order status updates are manual and performed only by workers.
+    - Orders are stored in memory and only persist for the current app session.
+    - Features: Menu browsing, order creation (buttons), order viewing, order tracking/fulfillment.
+
+    Rules & Constraints:
+    - Dependency-light: Use standard library features wherever possible.
+    - Project Structure: Use Maven's standard `src/main/java` and `src/test/java` folders.
+    - Packages: Use a simple `coffeeshop.*` package root instead of reverse-domain naming.
+    - MVC Packaging: Keep MVC-related application classes within the `coffeeshop.app` package structure, using dedicated `controllers`, `views`, and `models` subpackages as the default baseline layout.
+    - UI Implementation: Use pure JavaFX in code rather than FXML unless a future change explicitly introduces it.
+    - Dependencies: Manage JavaFX, JUnit, and other external libraries through Maven.
+    - Local Run Workflow: The default local development launch path should be `mvn javafx:run`.
+    - Distribution Packaging: Prefer a JavaFX runtime image build for distribution as the default desktop delivery format.
+    - Modularity: Maintain a Java module descriptor when required to support JavaFX runtime image packaging.
+    - OOP Focus: Prioritize design patterns and proper data structures.
+    - UI Logic: Keep business logic (order handling) separate from JavaFX controllers.
+    - MVC: Treat MVC as the default architectural pattern for the application.
+    - Testing: Every new class must have a corresponding JUnit 5 test.
+    - Documentation: Every spec should define the expected design pattern being applied.
+rules:
+    proposal:
+        - Focus on cashier workflow for taking customer orders.
+        - Explicitly describe screen separation between creating orders and viewing/updating orders.
+        - For the initial setup change, prefer a runnable project skeleton that proves build, launch, and test flow.
+    specs:
+        - Use Given/When/Then scenarios.
+        - Explicitly state the OOP pattern intended (e.g., Factory for orders).
+        - Treat order status changes as worker-driven manual actions unless a change explicitly states otherwise.
+    design:
+        - Emphasize strict MVC separation of concerns.
+        - Define JavaFX components and their interaction with the domain model.
+        - Keep JavaFX controllers thin and move business rules into non-UI classes.
+        - Assume in-memory, session-scoped order storage unless a change expands persistence requirements.
+        - Reflect the Maven project structure and package layout in all design artifacts.
+        - Prefer pure JavaFX code-based UI structure unless a future change introduces FXML intentionally.
+    tasks:
+        - Break down into small, implementation-ready steps.
+        - For initial setup work, include build, run, test, and repository hygiene tasks such as `.gitignore`.
